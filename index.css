@@ -22,6 +22,13 @@ header {
     border-bottom: 4px solid var(--background-main);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        justify-content: center;
+    }
 }
 
 .logo-area {
@@ -29,6 +36,7 @@ header {
     gap: 20px;
     align-items: center;
     padding: 20px 100px;
+    /* margin: 0 50px; */
 }
 
 .logo-area img {
@@ -37,7 +45,7 @@ header {
 }
 
 .logo-text {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: bold;
     margin: 0;
 }
@@ -46,7 +54,7 @@ header {
     display: flex;
     padding: 20px 100px;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
 }
 
 .link-area img {
@@ -64,19 +72,34 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
+    transition: all 0.2s ease-in-out;
 }
 
-.link a {
+.link-text:hover {
+    padding-bottom: 7px;
+    border-bottom: 2px solid var(--button);
+}
+
+a {
     text-decoration: none;
     color: inherit;
 }
 
 .link-button {
+    font-size: 1.5rem;
+    font-weight: 600;
     padding: 5px 30px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     background: var(--button);
     color: var(--background-card);
     box-shadow: 4px 4px 2px var(--button-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.link-button:hover {
+    padding: 5px 50px;
+    box-shadow: 4px 6px 10px var(--button-shadow);
+
 }
 
