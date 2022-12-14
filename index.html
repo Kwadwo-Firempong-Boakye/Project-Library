@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="glass"></div>
 
         <header>
             <div class="logo-area">
@@ -62,27 +63,49 @@
                     </div>
 
                 </div>
+
+                <div class="card">
+
+                    <img class="media-image" src="anomaly-oRskqiH7FNc-unsplash.jpg" alt="">
+                    
+                    <div class="details">
+                        <p class="book-name"><span>Title</span><br>Harry Potter and the Half Blood Shoe maker granny</p>
+                        <hr>
+                        <p class="author"><span>Author:   </span>J.K Rowling</p>
+                        <hr>
+                        <p class="pages"><span>Pages:   </span>200</p>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="unread-state">read</button>
+                        <svg class="delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor"  d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+                    </div>
+
+                </div>
                 
             </div>
 
         </main>
 
-        <section class="pop-up">
-            <p>Add New Book</p>
+        <form class="pop-up">
+            <p class="add-title">Add New Book</p>
             <div class="popup-inputs">
-                <input type="text" id="user-book-title" placeholder="Title">
-                <input type="text" id="user-book-author" placeholder="Author">
-                <input type="number" id="user-book-pages" placeholder="Pages">
+                <input type="text" id="user-book-title" placeholder="Title" required>
+                <input type="text" id="user-book-author" placeholder="Author" required>
+                <input type="number" id="user-book-pages" placeholder="Pages" required>
             </div>
             <div class="user-read-state">
                 <p>Have you read it?</p>
+                <input type="radio" name="read-state" id="read" value="read" required>
                 <label for="read">Yes</label>
-                <input type="radio" name="read-state" id="read" value="read">
+                <br>
+                <input type="radio" name="read-state" id="unread" value="unread" required>
                 <label for="unread">No</label>
-                <input type="radio" name="read-state" id="unread" value="unread">
             </div>
+            
             <button>Submit</button>
-        </section>
+            
+        </form>
 
         <footer></footer>
     </div>
