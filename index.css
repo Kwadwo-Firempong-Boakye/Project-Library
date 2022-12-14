@@ -136,7 +136,7 @@ a {
     box-shadow: 3px 3px 4px #beb4d7;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     padding: 20px;
 }
 
