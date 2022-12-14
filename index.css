@@ -119,8 +119,8 @@ a {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-    justify-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
     gap: 50px;
     padding: 50px 100px;
     padding-top: 200px;
@@ -128,7 +128,7 @@ a {
 
 .card {
     height: 400px;
-    /* max-width: 300px; */
+    max-width: 300px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     background: var(--background-main);
