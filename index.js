@@ -61,6 +61,8 @@ function addBookToLibrary(e) {
 
     myLibrary.push(new Book(bookTitle, bookAuthor, bookImage, bookPages, bookReadState));
 
+    hidePopup(e)
+
 }
 
 //Event Listener for popup submit
