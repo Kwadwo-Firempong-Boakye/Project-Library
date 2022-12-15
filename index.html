@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="card-buttons">
-                        <button class="unread-state">read</button>
+                        <button class="read-state">read</button>
                         <svg class="delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor"  d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                     </div>
 
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="card-buttons">
-                        <button class="unread-state">read</button>
+                        <button class="read-state">read</button>
                         <svg class="delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor"  d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                     </div>
 
@@ -92,7 +92,7 @@
             <div class="popup-inputs">
                 <input type="text" id="user-book-title" placeholder="Title" required>
                 <input type="text" id="user-book-author" placeholder="Author" required>
-                <input type="url" id="user-book-url" placeholder="Cover Image Link">
+                <input type="url" id="user-book-url" placeholder="Cover Image Link (not required)" value="">
                 <input type="number" id="user-book-pages" placeholder="Pages" required>
             </div>
             <div class="user-read-state">
@@ -104,7 +104,7 @@
                 <label for="unread">No</label>
             </div>
             
-            <button>Submit</button>
+            <button type="submit">Submit</button>
             
         </form>
 
