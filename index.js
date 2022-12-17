@@ -34,6 +34,7 @@ function Book (title, author, image, pages, readState) {
     this.image = image,
     this.pages = pages,
     this.readState = readState,
+    this.primaryKey = (this.title + this.pages + this.author).replace(/\s/g, "");
     this.info = function () {
         return `${title} by ${author}, ${pages} pages, ${readState}`;
     }
@@ -82,7 +83,10 @@ function showBookOnPage (bTitle = "Jennifer Volcano of Oz", author = "John Doe",
     
     const cardContainer = document.querySelector(".card-container");
     const card = document.createElement("div");
-    card.classList.add("card", "newCard")
+    card.classList.add("card", "newCard");
+
+    let dataKey = (bTitle + pages + author).replace(/\s/g, "");
+    card.setAttribute("data-key", dataKey);
 
     const cardContent = `<img class="media-image" src="${image}" alt="book image">` + 
                         `<div class="details">` +
@@ -101,6 +105,8 @@ function showBookOnPage (bTitle = "Jennifer Volcano of Oz", author = "John Doe",
     card.innerHTML = cardContent
     cardContainer.append(card);
     card.scrollIntoView({behavior: "smooth"});
+
+    
 
 }
 
