@@ -69,8 +69,41 @@ function addBookToLibrary(e) {
 
 popupContainer.addEventListener("submit", addBookToLibrary)
 
+//Function to create book display on web page
 
-//
+function showBookOnPage (author = "John Doe", image = "./anomaly-oRskqiH7FNc-unsplash.jpg", pages = "100", state = "unread", bTitle = "Jennifer Volcano of Oz") {
+    
+    const cardContainer = document.querySelector(".card-container");
+    const card = document.createElement("div");
+    card.classList.add("card", "newCard")
+
+    const cardContent = `<img class="media-image" src="${image}" alt="book image">` + 
+                        `<div class="details">` +
+                            `<p class="book-name"><span>Title</span><br> ${bTitle} </p>` +
+                            `<hr>` +
+                            `<p class="author"><span>Author:   </span>${author}</p>` +
+                            `<hr>` +
+                            `<p class="pages"><span>Pages:   </span>${pages}</p>` +
+                        `</div>` +
+                        `<div class="card-buttons">` +
+                            `<button class="${state + "-state"}">${state}</button>` +
+                            `<svg class="delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor"  d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>` +
+                        `</div>` +
+                    `</div>`;
+    
+    card.innerHTML = cardContent
+    cardContainer.append(card);
+    card.scrollIntoView({behavior: "smooth"});
+
+}
+
+
+
+
+
+const moon = document.querySelector(".dmode");
+moon.addEventListener("click", () => {showBookOnPage()});
+
 
 
 
