@@ -47,7 +47,7 @@ function addBookToLibrary(e) {
 
     const bookTitle = document.querySelector("#user-book-title").value;
     const bookAuthor = document.querySelector("#user-book-author").value;
-    const bookImage = document.querySelector("#user-book-url").value;
+    let bookImage = document.querySelector("#user-book-url").value;
     const bookPages = document.querySelector("#user-book-pages").value;
     const radioButtons = document.getElementsByName("read-state");
     
@@ -59,7 +59,13 @@ function addBookToLibrary(e) {
         }
     })
 
+    if (bookImage == "") {
+        bookImage = "./anomaly-oRskqiH7FNc-unsplash.jpg";
+    }
+
     myLibrary.push(new Book(bookTitle, bookAuthor, bookImage, bookPages, bookReadState));
+
+    showBookOnPage(bookTitle, bookAuthor, bookImage, bookPages, bookReadState)
 
     hidePopup(e)
 
@@ -71,7 +77,7 @@ popupContainer.addEventListener("submit", addBookToLibrary)
 
 //Function to create book display on web page
 
-function showBookOnPage (author = "John Doe", image = "./anomaly-oRskqiH7FNc-unsplash.jpg", pages = "100", state = "unread", bTitle = "Jennifer Volcano of Oz") {
+function showBookOnPage (bTitle = "Jennifer Volcano of Oz", author = "John Doe", image = "./anomaly-oRskqiH7FNc-unsplash.jpg", pages = "100", state = "unread") {
     
     const cardContainer = document.querySelector(".card-container");
     const card = document.createElement("div");
