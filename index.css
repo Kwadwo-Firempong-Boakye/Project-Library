@@ -15,6 +15,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f7f7f8;
+    scroll-behavior: smooth;
 }
 
 .glass {
@@ -67,7 +68,8 @@ header {
     height: 30px;
 }
 
-.link {
+.link,
+.dmode {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -129,17 +131,17 @@ a {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* justify-content: start; */
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, 350px);
+    justify-content: center;
     gap: 50px;
     padding: 50px 100px;
     padding-top: 200px;
+    transition: all 0.3s linear;
 }
 
 .card {
     height: 400px;
-    max-width: 300px;
+    width: 300px;
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background: var(--background-main);
@@ -149,7 +151,18 @@ a {
     flex-direction: column;
     gap: 5px;
     padding: 20px;
+    transition: all 0.3s linear;
 }
+
+.newCard {
+    animation: card-appear 0.5s ease-in-out;
+}
+
+@keyframes card-appear {
+    0% {transform: scale(0); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+
 
 .media-image {
     object-fit: cover;
