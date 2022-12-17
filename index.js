@@ -29,7 +29,7 @@ glass.addEventListener("click", hidePopup);
 //Constructor function to create a book entry
 
 function Book(title, author, image, pages, readState) {
-	(this.title = title),
+	    (this.title = title),
 		(this.author = author),
 		(this.image = image),
 		(this.pages = pages),
@@ -54,6 +54,7 @@ const lotr = new Book(
 );
 const hpatcos = new Book(
 	"Harry Potter and the Chamber of Secrets",
+    "J.K.Rowling",
 	"https://m.media-amazon.com/images/I/91OINeHnJGL.jpg",
 	357,
 	"read"
@@ -105,15 +106,23 @@ function showBookOnPage(
 	author = "John Doe",
 	image = "./anomaly-oRskqiH7FNc-unsplash.jpg",
 	pages = "100",
-	state = "unread"
+	state = "unread",
+    index
 ) {
 	const cardContainer = document.querySelector(".card-container");
 	const card = document.createElement("div");
 	card.classList.add("card", "newCard");
 
 	// let dataKey = (bTitle + pages + author).replace(/\s/g, "");
-	let dataKey = myLibrary.length - 1;
-	card.setAttribute("data-key", dataKey);
+    if (myLibrary.length > 2) {
+        let dataKey = myLibrary.length - 1;
+        card.setAttribute("data-key", dataKey);
+
+    } else {
+        let dataKey = index;
+        card.setAttribute("data-key", dataKey);
+        
+    }
 
 	const cardContent =
 		`<img class="media-image" src="${image}" alt="book image">` +
@@ -180,6 +189,23 @@ function handleDomClick(e) {
 		}
 	}
 }
+
+function pageLoad() {
+	myLibrary.forEach((item, index) => {
+		let bTitle = item["title"];
+		let bAuth = item["author"];
+		let bImage = item["image"];
+		let bPage = item["pages"];
+		let bState = item["readState"];
+        console.log(bTitle, bAuth, bImage, bPage, bState, index);
+
+        showBookOnPage(bTitle, bAuth, bImage, bPage, bState, index);
+	});
+}
+
+window.addEventListener("load", () => {
+    pageLoad();
+});
 
 const moon = document.querySelector(".dmode");
 moon.addEventListener("click", () => {
