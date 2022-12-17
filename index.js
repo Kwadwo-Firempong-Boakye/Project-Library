@@ -42,7 +42,7 @@ function Book (title, author, image, pages, readState) {
 //Function to derive form inputs and create new book
 
 function addBookToLibrary(e) {
-    
+
     e.preventDefault();
 
     const bookTitle = document.querySelector("#user-book-title").value;
@@ -104,16 +104,11 @@ function showBookOnPage (bTitle = "Jennifer Volcano of Oz", author = "John Doe",
 
 }
 
-
-
-
-
 const moon = document.querySelector(".dmode");
 moon.addEventListener("click", () => {showBookOnPage()});
 
-
-
-
-// const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, "not read yet");
+const lotr = new Book("The Lord of the Rings", "J.R.R Tolkien", "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg", 1178, "unread");
+const hpatcos = new Book("Harry Potter and the Chamber of Secrets", "https://m.media-amazon.com/images/I/91OINeHnJGL.jpg", 357, "read");
+myLibrary.push(lotr, hpatcos);
 // console.log(theHobbit.info());
 
