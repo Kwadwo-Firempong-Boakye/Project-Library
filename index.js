@@ -42,7 +42,7 @@ function Book (title, author, image, pages, readState) {
 //Function to derive form inputs and create new book
 
 function addBookToLibrary(e) {
-
+    
     e.preventDefault();
 
     const bookTitle = document.querySelector("#user-book-title").value;
@@ -69,6 +69,7 @@ function addBookToLibrary(e) {
 
     hidePopup(e)
 
+    e.target.reset();
 }
 
 //Event Listener for popup submit
