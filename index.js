@@ -207,9 +207,9 @@ window.addEventListener("load", () => {
     pageLoad();
 });
 
-const moon = document.querySelector(".dmode");
-moon.addEventListener("click", () => {
-	showBookOnPage();
-});
+// const moon = document.querySelector(".dmode");
+// moon.addEventListener("click", () => {
+// 	showBookOnPage();
+// });
 
 // console.log(theHobbit.info());
