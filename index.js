@@ -27,21 +27,20 @@ addBookButton.addEventListener("click", showPopup);
 glass.addEventListener("click", hidePopup);
 
 //Constructor function to create a book entry
+class Book {
+	constructor(title, author, image, pages, readState) {
+		this.title = title;
+		this.author = author;
+		this.image = image;
+		this.pages = pages;
+		this.readState = readState;
+		this.primaryKey = (this.title + this.pages + this.author).replace(/\s/g, "");
+	}
 
-function Book(title, author, image, pages, readState) {
-	    (this.title = title),
-		(this.author = author),
-		(this.image = image),
-		(this.pages = pages),
-		(this.readState = readState),
-		(this.primaryKey = (this.title + this.pages + this.author).replace(
-			/\s/g,
-			""
-		));
-	this.info = function () {
-		return `${title} by ${author}, ${pages} pages, ${readState}`;
-	};
-}
+	info() {
+		console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${this.readState}`);
+	}
+};
 
 //Add a few books to myLibrary Array
 
@@ -54,7 +53,7 @@ const lotr = new Book(
 );
 const hpatcos = new Book(
 	"Harry Potter and the Chamber of Secrets",
-    "J.K.Rowling",
+	"J.K.Rowling",
 	"https://m.media-amazon.com/images/I/91OINeHnJGL.jpg",
 	357,
 	"read"
@@ -107,22 +106,20 @@ function showBookOnPage(
 	image = "./anomaly-oRskqiH7FNc-unsplash.jpg",
 	pages = "100",
 	state = "unread",
-    index
+	index
 ) {
 	const cardContainer = document.querySelector(".card-container");
 	const card = document.createElement("div");
 	card.classList.add("card", "newCard");
 
 	// let dataKey = (bTitle + pages + author).replace(/\s/g, "");
-    if (myLibrary.length > 2) {
-        let dataKey = myLibrary.length - 1;
-        card.setAttribute("data-key", dataKey);
-
-    } else {
-        let dataKey = index;
-        card.setAttribute("data-key", dataKey);
-        
-    }
+	if (myLibrary.length > 2) {
+		let dataKey = myLibrary.length - 1;
+		card.setAttribute("data-key", dataKey);
+	} else {
+		let dataKey = index;
+		card.setAttribute("data-key", dataKey);
+	}
 
 	const cardContent =
 		`<img class="media-image" src="${image}" alt="book image">` +
@@ -197,14 +194,14 @@ function pageLoad() {
 		let bImage = item["image"];
 		let bPage = item["pages"];
 		let bState = item["readState"];
-        console.log(bTitle, bAuth, bImage, bPage, bState, index);
+		console.log(bTitle, bAuth, bImage, bPage, bState, index);
 
-        showBookOnPage(bTitle, bAuth, bImage, bPage, bState, index);
+		showBookOnPage(bTitle, bAuth, bImage, bPage, bState, index);
 	});
 }
 
 window.addEventListener("load", () => {
-    pageLoad();
+	pageLoad();
 });
 
 // const moon = document.querySelector(".dmode");
